@@ -1,0 +1,19 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_test")
+
+go_test(
+    name = "02-go-dependency",
+    srcs = ["main_test.go"],
+    deps = ["@com_github_stretchr_testify//assert"],
+)
+
+
+## Demo Note: Explain label
+## Demo Note: bazel run with full label
+## Demo Note: Show workspace repositories
+
+##  Canonical form:  @io_bazel_rules_go//go:def.bzl
+##  @                               workspace root
+##  io_bazel_rules_go               repository name
+##  //go                            package name
+##  :def.bzl                        target name
+

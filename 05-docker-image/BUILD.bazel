@@ -1,0 +1,22 @@
+
+load("@io_bazel_rules_docker//go:image.bzl", "go_image")
+load("@io_bazel_rules_docker//container:container.bzl", "container_push")
+
+
+go_image(
+    name = "image",
+    embed = ["//04-version:04-version-lib"],
+    importpath = "github.com/karhoo/bazel-demo/05-docker_image",
+)
+
+container_push(
+   name = "docker_push",
+   image = ":image",
+   format = "Docker",
+   registry = "localhost:5000/my-ubuntu",
+   repository = "karhoo",
+   tag = "dev",
+)
+
+
+##  docker run -d -p 5000:5000 --restart=always --name registry registry:2

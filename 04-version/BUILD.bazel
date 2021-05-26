@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("//tools/version_gen:gen.bzl", "version_gen")
+
+version_gen(
+    name = "version",
+    out = "version.go",
+)
+
+go_library(
+    name = "04-version-lib",
+    srcs = [
+        "main.go",
+        "version.go",
+    ],
+    importpath = "github.com/karhoo/bazel-demo/03-go-package/printer",
+    visibility = ["//visibility:public"],
+)
+
+
+go_binary(
+    name = "04-version",
+    embed = [":04-version-lib"],
+    visibility = ["//visibility:public"],
+)

@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "**/bazel-out": true,
+
+        "**/bazel-bin/": true,
+        "**/bazel-karhoo-bazel-demo": true,
+        "**/bazel-testlogs": true,
+        "**/bazel-bazel-demo": true,
+    }
+}
