@@ -4,6 +4,14 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
 ## =============================================================================
+## Cpp
+http_archive(
+  name = "rules_cpp",
+  urls = ["https://github.com/bazelbuild/rules_cc/archive/40548a2974f1aea06215272d9c2b47a14a24e556.zip"],
+  strip_prefix = "rules_cc-40548a2974f1aea06215272d9c2b47a14a24e556",
+)
+
+## =============================================================================
 ## Go
 http_archive(
     name = "io_bazel_rules_go",
