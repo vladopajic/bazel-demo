@@ -11,7 +11,9 @@ go_test(
 ## Demo Note: bazel run with full label
 ## Demo Note: Show workspace repositories
 
-##  Canonical form:  @io_bazel_rules_go//go:def.bzl
+## Labels:
+##  Canonical form:  @repository_name//package/package/:target
+##  @io_bazel_rules_go//go:def.bzl
 ##  @                               workspace root
 ##  io_bazel_rules_go               repository name
 ##  //go                            package name
